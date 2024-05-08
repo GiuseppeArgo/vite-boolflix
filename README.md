@@ -20,7 +20,7 @@ possiamo passare anche language=it-IT per filtrare i risultati in lingua italian
 Esempio chiamata: 
 https://api.themoviedb.org/3/search/movie?api_key=e99307154c6dfb0b4750f6603256716d&query=ritorno+al+fut 
 uro 
-- [ ] Milestone 0: 
+- [x] Milestone 0: 
 Progettare la struttura del global state sulla linea degli esercizi svolti nei giorni 
 precedenti. 
 
