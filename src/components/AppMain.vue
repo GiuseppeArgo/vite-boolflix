@@ -1,12 +1,17 @@
 <script>
-export default {
-    
+import { store } from '../store';
+export default{
+    data(){
+        return{
+            store,
+        }
+    }
 }
 </script>
 
 <template>
 <div>
-    <h1>Project Main</h1>
+
 </div>
 </template>
 

@@ -1,6 +1,11 @@
 <script>
+import { store } from "../store"
 export default {
-    
+    data() {
+        return {
+            store,
+        }
+    }
 }
 </script>
 
@@ -12,8 +17,8 @@ export default {
             <div class="search">
                 <label for="search">Trova un film o una serie</label>
                 <div>
-                    <input id="search" type="text" placeholder="Cerca...">
-                    <button>Trova</button>
+                    <input v-model="store.searchQuery" id="search" type="text" placeholder="Cerca...">
+                    <button @click="$emit('searchIn')">Trova</button>
                 </div>
             </div>
         </div>
