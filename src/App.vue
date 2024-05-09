@@ -28,14 +28,14 @@ export default {
           axios.get("https://api.themoviedb.org/3/search/tv",{
               params: paramsobj
           }).then((resp) => {
-              this.store.arraySerie = resp.data.results;
-              console.log("series",this.store.arraySerie);
+              this.store.tvArray = resp.data.results;
+              console.log("series",this.store.tvArray);
           });
           axios.get("https://api.themoviedb.org/3/search/movie",{
               params: paramsobj
           }).then((resp) => {
-              this.store.arrayFilm = resp.data.results;
-              console.log("film",this.store.arrayFilm);
+              this.store.movieArray = resp.data.results;
+              console.log("film",this.store.movieArray);
           });
     }
   }
