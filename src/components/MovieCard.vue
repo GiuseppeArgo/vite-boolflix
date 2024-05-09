@@ -27,6 +27,10 @@ export default {
                     imgUrl = "../src/assets/img/Sconosciuta.png"   
             }
             return imgUrl
+        },
+
+        voteToStars(vote){
+            return Math.floor(vote / 2) + 1;
         }
     }
 }
@@ -40,7 +44,9 @@ export default {
             <p>Titolo originale: {{ this.cardObj.original_title }}</p>
             <p>Lingua:</p>
             <img :src="showFlag(cardObj.original_language)" alt="" v-if="showFlag(cardObj.original_language) != 'Bandiera non disponibile'">
-            <p>Voto: {{ this.cardObj.vote_average }}</p>
+            <p>Voto: {{ voteToStars(this.cardObj.vote_average) }}</p>
+            <span v-for="curStar in voteToStars(this.cardObj.vote_average)"><i class="fa-solid fa-star"></i></span>
+            <span v-for="curStar in (5 - voteToStars(this.cardObj.vote_average))"><i class="fa-regular fa-star"></i></span><br>
         </div>
     </div>
 </template>
