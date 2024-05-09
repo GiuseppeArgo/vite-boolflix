@@ -35,7 +35,7 @@ export default {
 <template>
     <div class="card-container">
         <div class="card">
-            <img :src="`https://image.tmdb.org/t/p/w342${cardObj.poster_path}`" alt="">
+            <img :src="`https://image.tmdb.org/t/p/w342${cardObj.poster_path}`" alt="Movie poster">
             <p>Titolo: {{ this.cardObj.title }}</p>
             <p>Titolo originale: {{ this.cardObj.original_title }}</p>
             <p>Lingua:</p>
