@@ -44,20 +44,45 @@ export default {
 </script>
 
 <template>
-    <div class="card-container">
-        <div class="card">
-            <img :src="`https://image.tmdb.org/t/p/w342${cardObj.poster_path}`" alt="Series poster">
+    <div class="series-card" :style="{backgroundImage: `url(https://image.tmdb.org/t/p/w342${cardObj.poster_path})` }">
+        <div class="card-back p-2">
             <p>Titolo: {{ this.cardObj.name }}</p>
             <p>Titolo originale: {{ this.cardObj.original_name }}</p>
-            <p>Lingua:</p>
-            <img :src="showFlag(cardObj.original_language)" alt="">
-            <p>Voto: {{ this.cardObj.vote_average }}</p>
-            <span v-for="curStar in voteToStars(this.cardObj.vote_average)"><i class="fa-solid fa-star"></i></span>
-            <span v-for="curStar in (5 - voteToStars(this.cardObj.vote_average))"><i class="fa-regular fa-star"></i></span><br>
+            <p class="overview">Trama: {{ this.cardObj.overview }}</p>
+            <div class="mb-2 mt-3 text-center">
+                <p>Lingua:</p>
+                <img :src="showFlag(cardObj.original_language)" alt="" v-show="showFlag(cardObj.original_language) != 'Bandiera non disponibile'">
+            </div>
+            <div class="text-center">
+                <p>Voto: {{ this.cardObj.vote_average }}</p>
+                <span v-for="curStar in voteToStars(this.cardObj.vote_average)"><i class="fa-solid fa-star"></i></span>
+                <span v-for="curStar in (5 - voteToStars(this.cardObj.vote_average))"><i class="fa-regular fa-star"></i></span><br>
+            </div>
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
+.series-card {
+    height: 600px;
+    background-position: center;
+    background-size: cover;
+}
 
+.card-back{
+    display: none;
+}
+
+.series-card:hover .card-back {
+    height: 600px;
+    color: white;
+    background-color: black;
+    display: block;
+    .overview {
+        font-size: .6rem;
+    }
+    img {
+        width: 50px;
+    }
+}
 </style>

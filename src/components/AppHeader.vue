@@ -31,7 +31,10 @@ export default {
 @use "../style/partials/mixin" as *;
 
 .header {
+    height: 80px;
     padding: 10px;
+    background-color: black;
+    color: white;
 
     .container {
         display: flex;
@@ -39,6 +42,10 @@ export default {
         justify-content: space-between;
         margin: 0 auto;
 
+        h1 {
+            color: red;
+        }
+        
         .search {
             display: flex;
             padding: 10px;
@@ -55,6 +62,7 @@ export default {
 
             button {
                 padding: 5px 2px;
+                background-color: white;
             }
         }
     }
